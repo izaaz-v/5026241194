@@ -3,26 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB; // Don't forget this import!
 
 class PegawaiController extends Controller
 {
-    public function index()
-    {
-        // Fetch all data for the initial load
-        $pegawai = DB::table('pegawai')->paginate(10);
-        return view('index', ['pegawai' => $pegawai]);
+    //
+    public function index($nama){
+
+    	return $nama;
+
     }
 
-    public function cari(Request $request)
-    {
-        $cari = $request->cari;
+     public function formulir(){
 
-        // The search logic
-        $pegawai = DB::table('pegawai')
-            ->where('pegawai_nama', 'like', "%" . $cari . "%")
-            ->paginate();
+    	return view('formulir');
 
-        return view('index', ['pegawai' => $pegawai]);
-    }
+}
+
+public function proses(Request $request){
+        $nama = $request->input('nama');
+     	$alamat = $request->input('alamat');
+        $umur = $request->input('umur');
+        return "Nama : " . $nama . ",<br>Umur : " . $umur .
+        ", <br>Alamat : " . $alamat  ;
+}
 }
