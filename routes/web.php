@@ -20,8 +20,16 @@ Route::view('/blog/tentang', 'tentang');
 Route::view('/blog/kontak', 'contact');
 Route::view('/home', 'home');
 
+// Compatibility alias routes matching tutorial variants
+Route::get('/pegawai/tambah', [PegawaiController::class, 'create']);
+Route::post('/pegawai/store', [PegawaiController::class, 'store']);
+Route::get('/pegawai/edit/{pegawai}', [PegawaiController::class, 'edit']);
+Route::post('/pegawai/update/{pegawai}', [PegawaiController::class, 'update']);
+Route::get('/pegawai/hapus/{pegawai}', [PegawaiController::class, 'destroy']);
+
 // Forms & Database (CRUD for Pegawai)
 Route::resource('pegawai', PegawaiController::class);
+
 // keep old /formulir url pointing to create form for backward compatibility
 Route::get('/formulir', function () { return redirect()->route('pegawai.create'); });
 

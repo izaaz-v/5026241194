@@ -6,6 +6,18 @@
 @section('konten')
 
 <div class="mt-4">
+    <div class="bg-primary text-white rounded shadow-sm p-4 mb-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+            <div>
+                <h1 class="h3 font-weight-bold mb-1">5026241194 Izaaz Verdiansyah Khaisan Athif</h1>
+                <p class="mb-0">Data Pegawai</p>
+            </div>
+            <div class="mt-3 mt-md-0">
+                <a href="{{ route('pegawai.create') }}" class="btn btn-light btn-lg">+ Tambah Pegawai Baru</a>
+            </div>
+        </div>
+    </div>
+
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
