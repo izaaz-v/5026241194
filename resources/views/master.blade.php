@@ -13,10 +13,10 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-sm bg-light">
-
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="/blog">MyBlog</a>
             <!-- Links -->
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/blog">HOME</a>
                 </li>
@@ -26,8 +26,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/blog/kontak">KONTAK</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/menu">MENU</a>
+                </li>
             </ul>
-
         </nav>
 
         <hr />

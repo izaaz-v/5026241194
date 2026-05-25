@@ -1,55 +1,40 @@
-<!DOCTYPE html>
-<html>
+@extends('master')
 
-<head>
+@section('title', 'Formulir - Website Kami')
 
-    <title>Tutorial Laravel - www.malasngoding.com</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+@section('judul_halaman', 'Formulir Input Data')
 
-<body>
-    <div class="container">
-        <form action="/formulir/proses" method="post">
-            <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-            <div class="row">
-                <div class="col-sm-3">
-                    Nama :
-                </div>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" name="nama"> <br />
-                </div>
-            </div>
+@section('konten')
 
-            <div class="row">
-                <div class="col-sm-3">
-                    Umur :
+    <div class="card mt-4">
+        <div class="card-header bg-warning">
+            <h5>Isi Formulir Berikut</h5>
+        </div>
+        <div class="card-body">
+            <form action="/formulir/proses" method="post">
+                @csrf
+                <div class="form-group">
+                    <label for="nama">Nama:</label>
+                    <input class="form-control" type="text" name="nama" id="nama" required>
                 </div>
-                <div class="col-sm-9">
-                    <input class="form-control" type="number" name="umur"> <br />
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-3">
-                    Alamat :
+                <div class="form-group">
+                    <label for="umur">Umur:</label>
+                    <input class="form-control" type="number" name="umur" id="umur" required>
                 </div>
-                <div class="col-sm-9">
-                    <input class="form-control" type="text" name="alamat"> <br />
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <input class="btn btn-primary" type="submit" value="Simpan">
+                <div class="form-group">
+                    <label for="alamat">Alamat:</label>
+                    <input class="form-control" type="text" name="alamat" id="alamat" required>
                 </div>
-            </div>
-        </form>
+
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">Simpan</button>
+                    <a href="/blog" class="btn btn-secondary">Kembali</a>
+                    <a href="/blog/kontak" class="btn btn-info">Hubungi Kami</a>
+                </div>
+            </form>
+        </div>
     </div>
-</body>
 
-</html>
+@endsection
