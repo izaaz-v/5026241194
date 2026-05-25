@@ -20,11 +20,10 @@ Route::view('/blog/tentang', 'tentang');
 Route::view('/blog/kontak', 'contact');
 Route::view('/home', 'home');
 
-// Forms & Database
-Route::get('/formulir', [PegawaiController::class, 'formulir']);
-Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
-Route::get('/pegawai', [PegawaiDBController::class, 'index']);
-Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+// Forms & Database (CRUD for Pegawai)
+Route::resource('pegawai', PegawaiController::class);
+// keep old /formulir url pointing to create form for backward compatibility
+Route::get('/formulir', function () { return redirect()->route('pegawai.create'); });
 
 // Pertemuan (Course Material) Pages
 Route::view('/pertemuan1', 'pertemuan1');

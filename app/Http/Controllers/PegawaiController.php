@@ -2,28 +2,98 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class PegawaiController extends Controller
 {
-    //
-    public function index($nama){
+        /**
+         * Display a listing of the resource.
+         */
+        public function index(Request $request)
+        {
+                $search = $request->query('cari');
 
-    	return $nama;
+                $query = Pegawai::when($search, function ($q, $search) {
+                        return $q->where('pegawai_nama', 'like', "%{$search}%");
+                });
 
-    }
+                if (Schema::hasColumn('pegawai', 'id')) {
+                        $query = $query->orderBy('id', 'desc');
+                } elseif (Schema::hasColumn('pegawai', 'created_at')) {
+                        $query = $query->orderBy('created_at', 'desc');
+                }
 
-     public function formulir(){
+                $pegawai = $query->paginate(50)->withQueryString();
 
-    	return view('formulir');
+                return view('pegawai.index', compact('pegawai', 'search'));
+        }
 
-}
+        /**
+         * Show the form for creating a new resource.
+         */
+        public function create()
+        {
+                return view('pegawai.create');
+        }
 
-public function proses(Request $request){
-        $nama = $request->input('nama');
-     	$alamat = $request->input('alamat');
-        $umur = $request->input('umur');
-        return "Nama : " . $nama . ",<br>Umur : " . $umur .
-        ", <br>Alamat : " . $alamat  ;
-}
+        /**
+         * Store a newly created resource in storage.
+         */
+        public function store(Request $request)
+        {
+                $data = $request->validate([
+                        'pegawai_nama' => 'required|string|max:255',
+                        'pegawai_jabatan' => 'nullable|string|max:255',
+                        'pegawai_umur' => 'nullable|integer',
+                        'pegawai_alamat' => 'nullable|string',
+                ]);
+
+                Pegawai::create($data);
+
+                return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil disimpan.');
+        }
+
+        /**
+         * Display the specified resource.
+         */
+        public function show(Pegawai $pegawai)
+        {
+                return view('pegawai.show', compact('pegawai'));
+        }
+
+        /**
+         * Show the form for editing the specified resource.
+         */
+        public function edit(Pegawai $pegawai)
+        {
+                return view('pegawai.edit', compact('pegawai'));
+        }
+
+        /**
+         * Update the specified resource in storage.
+         */
+        public function update(Request $request, Pegawai $pegawai)
+        {
+                $data = $request->validate([
+                        'pegawai_nama' => 'required|string|max:255',
+                        'pegawai_jabatan' => 'nullable|string|max:255',
+                        'pegawai_umur' => 'nullable|integer',
+                        'pegawai_alamat' => 'nullable|string',
+                ]);
+
+                $pegawai->update($data);
+
+                return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil diperbarui.');
+        }
+
+        /**
+         * Remove the specified resource from storage.
+         */
+        public function destroy(Pegawai $pegawai)
+        {
+                $pegawai->delete();
+                return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil dihapus.');
+        }
 }

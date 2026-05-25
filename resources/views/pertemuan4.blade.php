@@ -59,8 +59,8 @@
                             immediately. Everything feels smooth and intuitive.”</i>
                     </p>
                     <div>
-                        <br><strong>Arthur Morgan</strong><br>
-                        <small class="text-muted"><i>Product Manager, RedemptionTech</i></small>
+                        <br><strong>Mr. White</strong><br>
+                        <small class="text-muted"><i>Product Manager, AVG.Co</i></small>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,8 @@
                             and
                             clean interface. Highly recommended for growing teams.”</i>
                     </p>
-                    <br><strong>Sophia Carter</strong><br>
-                    <small class="text-muted"><i>Operations Lead, BrightLabs</i></small>
+                    <br><strong>Lois Griffith</strong><br>
+                    <small class="text-muted"><i>Operations Lead, FamilyLabs</i></small>
                 </div>
             </div>
 
@@ -95,8 +95,8 @@
                             for
                             anyone to understand.”</i>
                     </p>
-                    <br><strong>Albert Whisker</strong><br>
-                    <small class="text-muted"><i>CEO of Umbrella Corps</i></small>
+                    <br><strong>Johnny Sean A.</strong><br>
+                    <small class="text-muted"><i>CEO of Invisible WallBreaker</i></small>
                 </div>
             </div>
 
@@ -109,8 +109,8 @@
                             “This solution saved us a lot of time in our daily workflow. It’s fast, practical, and the
                             design is very user-friendly.”</i>
                     </p>
-                    <br><strong>Phoenix Wright</strong><br>
-                    <small class="text-muted"><i>CEO of Fey & Co. Law Offices</i></small>
+                    <br><strong>Dottore Pentalone</strong><br>
+                    <small class="text-muted"><i>CEO of Fatui Tsaritsa</i></small>
                 </div>
             </div>
 
@@ -122,15 +122,11 @@
     <div class="bottom-field container py-5 justify-content-center align-items-center d-flex">
         <div class="row text-center">
 
-            <div class="col px-5"><img src="https://logo.svgcdn.com/devicon/amazonwebservices-original.png" width="30"
-                    alt="Logo 1"></div>
-            <div class="col px-5"><img src="https://logo.svgcdn.com/devicon/googlecloud-original.png" width="30"
-                    alt="Logo 2"></div>
-            <div class="col px-5"><img src="https://logo.svgcdn.com/logos/apple.png" width="30" alt="Logo 3">
-            </div>
-            <div class="col px-5"><img src="https://logo.svgcdn.com/logos/ibm.png" width="30" alt="Logo 4"></div>
-            <div class="col px-5"><img src="https://logo.svgcdn.com/logos/microsoft-icon.png" width="30" alt="Logo 5">
-            </div>
+                <div class="col px-5"><img src="/assets/img/clients/clients-1.webp" width="60" alt="Client 1"></div>
+                <div class="col px-5"><img src="/assets/img/clients/clients-2.webp" width="60" alt="Client 2"></div>
+                <div class="col px-5"><img src="/assets/img/clients/clients-3.webp" width="60" alt="Client 3"></div>
+                <div class="col px-5"><img src="/assets/img/clients/Cheetos.png" width="60" alt="Cheetos"></div>
+                <div class="col px-5"><img src="/assets/img/clients/Doritos.png" width="60" alt="Doritos"></div>
 
         </div>
     </div>

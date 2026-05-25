@@ -12,9 +12,9 @@ class DosenController extends Controller
         return "Halo ini adalah method index pada DosenController";
     }
     public function biodata(){
-        $nama = "Yustisio Priyatno";
+        $nama = "Izaaz Verdiansyah Khaisan Athif";
         $umur = 20;
-        $pelajaran = ["Algoritma & Pemrograman","Kalkulus","Pemrograman Web"];
+        $pelajaran = ["Sistem Informasi, Pemrograman Web"];
     	return view('biodata',['nama' => $nama, 'umur' => $umur, 'matkul' => $pelajaran]);
     }
 }

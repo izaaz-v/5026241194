@@ -11,7 +11,7 @@
             <h5>Isi Formulir Berikut</h5>
         </div>
         <div class="card-body">
-            <form action="/formulir/proses" method="post">
+            <form action="{{ route('pegawai.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama:</label>
