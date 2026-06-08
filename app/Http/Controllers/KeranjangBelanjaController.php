@@ -32,6 +32,6 @@ public function index()
     public function destroy($id)
     {
         KeranjangBelanja::findOrFail($id)->delete();
-        return redirect()->route('keranjang.index');
+        return redirect()->route('keranjang.index'); // fixed a lil bug
     }
 }
