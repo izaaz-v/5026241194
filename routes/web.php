@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KeranjangBelanjaController;
 
 // Home/Welcome
 Route::get('/', function () {
@@ -48,3 +49,9 @@ Route::view('/linktree', 'linktree');
 // Legacy Routes (for backward compatibility)
 Route::view('/tentang', 'tentang');
 Route::view('/contact', 'contact');
+
+// Keranjang Belanja Routes
+Route::get('/', [KeranjangBelanjaController::class, 'index'])->name('keranjang.index');
+Route::get('/tambah', [KeranjangBelanjaController::class, 'create'])->name('keranjang.create');
+Route::post('/simpan', [KeranjangBelanjaController::class, 'store'])->name('keranjang.store');
+Route::delete('/hapus/{id}', [KeranjangBelanjaController::class, 'destroy'])->name('keranjang.destroy');
