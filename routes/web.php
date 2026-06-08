@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\NilaiKuliahController;
 
 // Home/Welcome
 Route::get('/', function () {
@@ -50,8 +51,13 @@ Route::view('/linktree', 'linktree');
 Route::view('/tentang', 'tentang');
 Route::view('/contact', 'contact');
 
-// Keranjang Belanja Routes
-Route::get('/', [KeranjangBelanjaController::class, 'index'])->name('keranjang.index');
-Route::get('/tambah', [KeranjangBelanjaController::class, 'create'])->name('keranjang.create');
-Route::post('/simpan', [KeranjangBelanjaController::class, 'store'])->name('keranjang.store');
-Route::delete('/hapus/{id}', [KeranjangBelanjaController::class, 'destroy'])->name('keranjang.destroy');
+// Keranjang Belanja Routes (D4)
+Route::get('/keranjang', [KeranjangBelanjaController::class, 'index'])->name('keranjang.index');
+Route::get('/keranjang/tambah', [KeranjangBelanjaController::class, 'create'])->name('keranjang.create');
+Route::post('/keranjang/simpan', [KeranjangBelanjaController::class, 'store'])->name('keranjang.store');
+Route::delete('/keranjang/hapus/{id}', [KeranjangBelanjaController::class, 'destroy'])->name('keranjang.destroy');
+
+// Nilai Kuliah Routes (E5)
+Route::get('/nilai', [NilaiKuliahController::class, 'index'])->name('nilai.index');
+Route::get('/nilai/tambah', [NilaiKuliahController::class, 'create'])->name('nilai.create');
+Route::post('/nilai/simpan', [NilaiKuliahController::class, 'store'])->name('nilai.store');
