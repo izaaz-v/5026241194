@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiDBController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\TopiController;
 
 // Home/Welcome
 Route::get('/', function () {
@@ -61,3 +62,9 @@ Route::delete('/keranjang/hapus/{id}', [KeranjangBelanjaController::class, 'dest
 Route::get('/nilai', [NilaiKuliahController::class, 'index'])->name('nilai.index');
 Route::get('/nilai/tambah', [NilaiKuliahController::class, 'create'])->name('nilai.create');
 Route::post('/nilai/simpan', [NilaiKuliahController::class, 'store'])->name('nilai.store');
+
+// Topi Routes (E6)
+Route::get('/topi', [TopiController::class, 'index'])->name('topi.index');
+Route::get('/topi/tambah', [TopiController::class, 'create'])->name('topi.create');
+Route::post('/topi/simpan', [TopiController::class, 'store'])->name('topi.store');
+Route::delete('/topi/hapus/{kodetopi}', [TopiController::class, 'destroy'])->name('topi.destroy');
