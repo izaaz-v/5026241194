@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\TopiController;
+use App\Http\Controllers\SiswaController;
 
 // Home/Welcome
 Route::get('/', function () {
@@ -68,3 +69,6 @@ Route::get('/topi', [TopiController::class, 'index'])->name('topi.index');
 Route::get('/topi/tambah', [TopiController::class, 'create'])->name('topi.create');
 Route::post('/topi/simpan', [TopiController::class, 'store'])->name('topi.store');
 Route::delete('/topi/hapus/{kodetopi}', [TopiController::class, 'destroy'])->name('topi.destroy');
+
+// Siswa Routes
+Route::resource('siswa', SiswaController::class);
