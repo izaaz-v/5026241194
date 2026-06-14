@@ -148,6 +148,22 @@
           Biodata
           <small>Personal information and courses</small>
         </a>
+        <a href="/keranjang" class="menu-item">
+          Keranjang Belanja
+          <small>Shopping cart assignment example</small>
+        </a>
+        <a href="/nilai" class="menu-item">
+          Nilai Kuliah
+          <small>Student grades entry and display</small>
+        </a>
+        <a href="/topi" class="menu-item">
+          Topi
+          <small>Hat inventory management assignment</small>
+        </a>
+        <a href="/siswa" class="menu-item">
+          Siswa
+          <small>Student data CRUD assignment</small>
+        </a>
       </div>
 
       <!-- Footer -->
