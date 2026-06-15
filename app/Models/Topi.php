@@ -8,6 +8,6 @@ class Topi extends Model
 {
     protected $table = 'topi';
     protected $primaryKey = 'kodetopi';
-    public $timestamps = false; // Assuming the prompt didn't ask for created_at/updated_at
+    public $timestamps = false;
     protected $fillable = ['merktopi', 'stocktopi', 'tersedia'];
 }

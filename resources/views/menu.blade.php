@@ -164,6 +164,10 @@
           Siswa
           <small>Student data CRUD assignment</small>
         </a>
+      <a href="/eas" class="menu-item">
+          EAS - Tagihan Air
+          <small>Water billing data management</small>
+        </a>
       </div>
 
       <!-- Footer -->

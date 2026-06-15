@@ -9,6 +9,7 @@ use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\TopiController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\TagihanAirController;
 
 // Home/Welcome
 Route::get('/', function () {
@@ -72,3 +73,8 @@ Route::delete('/topi/hapus/{kodetopi}', [TopiController::class, 'destroy'])->nam
 
 // Siswa Routes
 Route::resource('siswa', SiswaController::class);
+
+// Tagihan Air Routes (E7)
+Route::get('/eas', [TagihanAirController::class, 'index'])->name('tagihan_air.index');
+Route::get('/eas/tambah', [TagihanAirController::class, 'create'])->name('tagihan_air.create');
+Route::post('/eas/simpan', [TagihanAirController::class, 'store'])->name('tagihan_air.store');
