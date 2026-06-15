@@ -131,6 +131,7 @@
     </style>
 </head>
 <body>
+    @include('partials.navbar')
     <div class="page">
         <section class="card">
             <h2>Tambah Barang ke Keranjang</h2>

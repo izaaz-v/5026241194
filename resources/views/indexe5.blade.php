@@ -164,6 +164,7 @@
     </style>
 </head>
 <body>
+    @include('partials.navbar')
     <div class="page">
         <section class="card">
             <div class="header">

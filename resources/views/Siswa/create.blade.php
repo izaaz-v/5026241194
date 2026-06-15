@@ -7,6 +7,7 @@
     <title>Tambah Data Siswa</title>
 </head>
 <body>
+    @include('partials.navbar')
     <h2>Tambah Data Siswa</h2>
 
     @if ($errors->any())

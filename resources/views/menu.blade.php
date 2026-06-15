@@ -70,6 +70,7 @@
     </style>
   </head>
   <body>
+    @include('partials.navbar')
     <div class="menu-container">
       <!-- Header -->
       <div class="header-section">

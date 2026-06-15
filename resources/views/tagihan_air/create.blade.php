@@ -116,4 +116,5 @@
         </section>
     </div>
 </body>
+    @include('partials.navbar')
 </html>

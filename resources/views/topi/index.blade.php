@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('partials.navbar')
     <h2>Daftar Inventory Topi</h2>
 
     <a href="{{ route('topi.create') }}">

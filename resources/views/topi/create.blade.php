@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('partials.navbar')
     <h2>Tambah Data Topi</h2>
 
     <form action="{{ route('topi.store') }}" method="POST">

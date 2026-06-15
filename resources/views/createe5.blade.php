@@ -129,6 +129,7 @@
     </style>
 </head>
 <body>
+    @include('partials.navbar')
     <div class="page">
         <section class="card">
             <h2>Tambah Nilai Kuliah</h2>

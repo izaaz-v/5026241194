@@ -7,6 +7,7 @@
     <title>Kode Soal tagihan_air</title>
 </head>
 <body>
+    @include('partials.navbar')
     <h2>Daftar Tagihan Air</h2>
 
     <a href="{{ route('tagihan_air.create') }}">

@@ -7,6 +7,7 @@
     <title>Edit Data Siswa</title>
 </head>
 <body>
+    @include('partials.navbar')
     <h2>Edit Data Siswa</h2>
 
     @if ($errors->any())

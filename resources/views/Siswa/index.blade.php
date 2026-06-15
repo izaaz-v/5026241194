@@ -7,6 +7,7 @@
     <title>Daftar Siswa</title>
 </head>
 <body>
+    @include('partials.navbar')
     <h2>Daftar Siswa</h2>
 
     @if (session('success'))
